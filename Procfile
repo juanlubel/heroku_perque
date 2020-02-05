@@ -1,3 +1,2 @@
 web: gunicorn app.wsgi --log-file -
-python manage.py --noinput
-python manage.py migrate
+web: python manage.py createsuperuser --email admin@example.com --username admin
