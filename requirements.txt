@@ -10,9 +10,6 @@ sqlparse==0.3.0
 psycopg2
 Faker
 django-cors-headers
-
-
-
 gunicorn
 django-heroku
 dj-database-url
