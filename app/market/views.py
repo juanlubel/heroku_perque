@@ -30,7 +30,7 @@ class ItemListView(generics.ListAPIView):
 class ItemCreateView(generics.CreateAPIView):
     lookup_field = 'slug'
     serializer_class = ItemSerializer
-
+    # comentario
     def get_queryset(self):
         return Item.objects.all()
 
