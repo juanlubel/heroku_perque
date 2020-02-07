@@ -91,16 +91,16 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'market',
-        'USER': 'juanlooser',
-        'PASSWORD': 'juanlooser',
-        'HOST': 'postgre',
+        'NAME': 'd21qei5489a3b9',
+        'USER': 'rvviznypkyhiqw',
+        'PASSWORD': 'd521995ce11eceb761c8e0a02ecca8ee317b39abebae0f219c119d0974db07bc',
+        'HOST': 'ec2-184-72-236-3.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
