@@ -90,7 +90,7 @@ def Seeder(self):
             quality=q[randint(0, 2)],
             owner=user
         )
-        # item.save()
+        item.save()
         cont += 1
 
     return Response('cont')
