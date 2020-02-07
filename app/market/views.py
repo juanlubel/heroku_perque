@@ -1,20 +1,17 @@
+import sys
 from random import randint
 
+from django.contrib.auth import get_user_model
 from rest_framework import generics
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny, IsAuthenticated
 
 from .minerals import dict
 from .models import Item
 from .serializers import ItemSerializer
-from .strutures.quick_sort import QuickSort
 from .strutures.merge_sort import MergeSort
+from .strutures.quick_sort import QuickSort
 
-
-from django.contrib.auth import get_user_model
-
-import sys
 sys.setrecursionlimit(1500)
 
 User = get_user_model()
