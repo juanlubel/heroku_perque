@@ -88,32 +88,19 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5b6ncj0qmrc9v',
-        'USER': 'kiahtukxqrsiyp',
-        'PASSWORD': '3922f5bbf002fa4e8b23224837692354f8e882176f094b472e24c57fe0e2ee43',
-        'HOST': 'ec2-3-213-192-58.compute-1.amazonaws.com',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'market',
+        'USER': 'juanlooser',
+        'PASSWORD': 'juanlooser',
+        'HOST': 'postgre',
         'PORT': '5432',
     }
 }
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'market',
-#         'USER': 'juanlooser',
-#         'PASSWORD': 'juanlooser',
-#         'HOST': 'postgre',
-#         'PORT': '5432',
-#     }
-# }
-
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -155,7 +142,6 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-
         # 'rest_framework.permissions.IsAuthenticated',
         # 'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
