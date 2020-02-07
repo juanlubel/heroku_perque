@@ -24,7 +24,7 @@ User = get_user_model()
 class ItemListView(generics.ListAPIView):
     lookup_field = 'slug'
     serializer_class = ItemSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         return Item.objects.all()
@@ -44,14 +44,14 @@ class ItemCreateView(generics.CreateAPIView):
 class ItemRudView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'slug'
     serializer_class = ItemSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    # permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_queryset(self):
         return Item.objects.all()
 
 
 class QuickSortAPI(generics.ListAPIView):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    # permission_classes = [IsAuthenticatedOrReadOnly]
     renderer_classes = [JSONRenderer]
 
     def get(self, request):
@@ -62,7 +62,7 @@ class QuickSortAPI(generics.ListAPIView):
 
 
 class MergeSortAPI(generics.ListAPIView):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    # permission_classes = [IsAuthenticatedOrReadOnly]
     renderer_classes = [JSONRenderer]
 
     def get(self, request):
