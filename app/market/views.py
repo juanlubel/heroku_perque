@@ -73,24 +73,24 @@ class MergeSortAPI(generics.ListAPIView):
 
 
 def Seeder(self):
-    # cont = 0
-    # q = ['Low', 'Mid', 'High']
-    # user_names = ['juanlu', 'guillermo', 'jordi', 'ivan', 'raul', 'ethan']
-    #
-    # while cont < 500:
-    #     user = User.objects.get(username=user_names[randint(0, 5)])
-    #     mineral = dict[randint(0, 200)]
-    #     num = randint(0, 1000)
-    #     item = Item(
-    #         slug=mineral['name'] + '_' + user.username,
-    #         name=mineral['name'],
-    #         sell_price=int(num * (randint(85, 95) / 100)),
-    #         buy_price=num,
-    #         quantity=randint(100, 2500),
-    #         quality=q[randint(0, 2)],
-    #         owner=user
-    #     )
-    #     # item.save()
-    #     cont += 1
+    cont = 0
+    q = ['Low', 'Mid', 'High']
+    user_names = ['juanlu', 'guillermo', 'jordi', 'ivan', 'raul', 'ethan']
+
+    while cont < 50:
+        user = User.objects.get(username=user_names[randint(0, 5)])
+        mineral = dict[randint(0, 200)]
+        num = randint(0, 1000)
+        item = Item(
+            slug=mineral['name'] + '_' + user.username,
+            name=mineral['name'],
+            sell_price=int(num * (randint(85, 95) / 100)),
+            buy_price=num,
+            quantity=randint(100, 2500),
+            quality=q[randint(0, 2)],
+            owner=user
+        )
+        # item.save()
+        cont += 1
 
     return Response('cont')
