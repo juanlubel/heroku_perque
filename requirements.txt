@@ -13,3 +13,4 @@ django-cors-headers
 django-heroku
 gunicorn
 dj-database-url
+whitenoise
