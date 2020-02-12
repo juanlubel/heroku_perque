@@ -37,6 +37,14 @@ class ItemCreateView(generics.CreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+class Salute(generics.ListAPIView):
+    lookup_field = 'slug'
+    serializer_class = ItemSerializer
+    # permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Item.objects.all()
+
 
 class ItemRudView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'slug'
