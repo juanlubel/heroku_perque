@@ -62,6 +62,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -84,9 +85,6 @@ TEMPLATES = [
     },
 ]
 
-MIDDLEWARE_CLASSES = (
-    'whitenoise.middleware.WhiteNoiseMiddleware'
-)
 
 WSGI_APPLICATION = 'app.wsgi.application'
 
